@@ -38,6 +38,7 @@
         <li><a href="breed.html">Breeds</a></li>
         <li><a href="caree.html">Care Tips</a></li>
         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html" >Videos</a></li>
         <li><a href="deli.html">Delivery</a></li>
         <li><a href="cont.html">Contact</a></li>
         <li><a href="about.html">About</a></li>
@@ -74,7 +75,7 @@
 
   <!-- Image Slider -->
   <div class="slider">
-    <img class="slide" src="h11.jpg" alt="Horse 1">
+    <img class="slide" src="h23.jpeg" alt="Horse 1">
     <img class="slide" src="h19.jpg" alt="Horse 2">
     <img class="slide" src="h17.jpg" alt="Horse 3">
     <img class="slide" src="h2.jpg" alt="Horse 4">
@@ -87,7 +88,7 @@
     <div class="content">
       <h2>Learn, Love, and Ride with Horses</h2>
       <p>Whether you’re a first-time owner or a lifelong equestrian, we provide quality care, tips, and connections to your dream horse.</p>
-      <img src="h4.jpg" alt="Beautiful horses" class="responsive-img" />
+      <img src="h27.jpg" alt="Beautiful horses" class="responsive-img" />
     </div>
   </section>
 
@@ -104,33 +105,111 @@
   <section data-aos="fade-up">
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="h1.jpg"></div>
+        <div class="swiper-slide"><img src="h29.jpeg"></div>
         <div class="swiper-slide"><img src="h9.jpg"></div>
         <div class="swiper-slide"><img src="h16.jpg"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
-
-  <!-- Image Gallery Row -->
-  <section class="image-row" data-aos="fade-up">
-    <img src="b1.jpg" alt="Horse in field">
-    <img src="b2.jpg" alt="Brown horse">
-    <img src="b5.jpg" alt="Grazing horse">
-    <img src="b3.jpg" alt="Foal standing">
-    <img src="b4.jpg" alt="Horse and rider">
-    <img src="b6.jpg" alt="Jumping horse">
-  </section>
-
-  <!-- Contact Form Modal -->
-  <button onclick="openForm()">📩 Contact Us</button>
-  <div id="contactForm" class="modal-form">
-    <h2>Contact Us</h2>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button onclick="closeForm()">Send ✉️</button>
+<section>
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="b1.jpg" alt="horse 1" class="image">
+    <span class="enlarged-image-container">
+      <img src="b1.jpg" alt="horse 1" class="enlarged-image">
+    </span>  
   </div>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="b2.jpg" alt="horse 2" class="image">
+      <span class="enlarged-image-container">
+        <img src="b2.jpg" alt="horse 2" class="enlarged-image">
+      </span>  
+    </div>
+  </div> 
+</div>   
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="b3.jpg" alt="horse 1" class="image">
+    <span class="enlarged-image-container">
+      <img src="b3.jpg" alt="horse 1" class="enlarged-image">
+    </span>  
+  </div>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="b4.jpg" alt="horse 2" class="image">
+      <span class="enlarged-image-container">
+        <img src="b4.jpg" alt="horse 2" class="enlarged-image">
+      </span>  
+    </div>
+  </div> 
+</div> 
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="b5.jpg" alt="horse 1" class="image">
+    <span class="enlarged-image-container">
+      <img src="b5.jpg" alt="horse 1" class="enlarged-image">
+    </span>  
+  </div>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="b6.jpg" alt="horse 2" class="image">
+      <span class="enlarged-image-container">
+        <img src="b6.jpg" alt="horse 2" class="enlarged-image">
+      </span>  
+    </div>
+  </div> 
+</div>     
+<style>
+  .image-container{
+    display: flex;
+  }
+   .image-wrapper{
+    margin: 10px;
+  }
+  .image{
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+  }
+  .enlarged-image-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  .enlarged-image{
+    max-width: 500px;
+    max-height: 500px;
+  }
+  .show-enlarged-image{
+    display: flex;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    const images=document.querySelectorAll('.image');
+     
+    images.forEach((image) =>{
+      image.addEventListener('click',function(){
+        const enlargedimagecontainer = image.nextElementSibling;
+        enlargedimagecontainer.classList.toggle('show-enlarged-image');
+        enlargedimagecontainer.addEventListener('click',function(){
+          this.classList.remove('show-enlarged-image');
+        });
+      });
+      
+    });
+  });
+</script>
+
+</section>
 
   <!-- Footer -->
   <footer class="footer">
