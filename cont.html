@@ -41,19 +41,41 @@
     <section class="contact-section" data-aos="fade-up">
       <h2>Contact Us</h2>
       <p>Have questions, feedback, or horse love to share? Drop us a message below!</p>
+      
+    <form
+    action="https://formspree.io/f/mzzrpqvo"
+    class="fs-form"
+    target="_top"
+    method="POST"
+  >
+    <div class="fs-field">
+      <label class="fs-label" for="name">Your Name</label>
+      <input class="fs-input" id="name" name="name" required />
+    </div>
+    <div class="fs-field">
+      <label class="fs-label" for="email">Email</label>
+      <input class="fs-input" id="email" name="email" required />
+      <p class="fs-description">
+        This will help me respond to your query via an email.
+      </p>
+    </div>
+    <div class="fs-field">
+      <label class="fs-label" for="message">Message</label>
+      <textarea
+        class="fs-textarea"
+        id="message"
+        name="message"
+        required
+      ></textarea>
+      <p class="fs-description">What would you like to discuss?</p>
+    </div>
+    <div class="fs-button-group">
+      <button class="fs-button" type="submit">Submit</button>
+    </div>
+  </form>
 
-      <form action="https://formspree.io/f/mzzrpqvo" method="POST" class="contact-form">
-        <label for="email">Your Email:</label>
-        <input type="email" name="email" id="email" required />
-
-        <label for="message">Your Message:</label>
-        <textarea name="message" id="message" required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
-      <p id="formMessage"></p>
-    </section>
-
+   
+     
     <section class="info" data-aos="fade-up">
       <h3>Visit or Reach Us</h3>
       <p><strong>Address:</strong> Geywood Acres Stable, Farm Road, Limbe, Cameroon</p>
