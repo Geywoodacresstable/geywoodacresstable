@@ -3,52 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <title>GEYWOOD ACRES STABLE | Gallery</title>
-  <link rel="stylesheet" href="st.css" />
- 
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  
 </head>
 <body>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-      background-color: #0072ff;
-      margin: 0;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      padding: 15px;
-      display: inline-block;
-    }
-    nav ul li a.active,
-    nav ul li a:hover {
-      background-color: #005bb5;
-      border-radius: 5px;
-    }
+   header {
+  background-color: #292e2f;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative;
+}
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+nav a {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover,
+nav a.active {
+  color: #f1c40f;
+}
+
     header {
-      background-color: #0072ff;
-      border-radius: 15px; /* Rounded border */
+      background: #292e2f;
+      color: white;
+      text-align: center;
       padding: 20px;
-      margin: 20px auto;
-      max-width: 100%; /* Ensure it doesn't overflow */
-      width: 90%; /* Optional: You can adjust the width as needed */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
     }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
     .tabs {
       display: flex;
       justify-content: center;
@@ -66,6 +81,7 @@
     .tab.active {
       background-color: #005bb5;
     }
+
     .gallery {
       display: none;
       flex-wrap: wrap;
@@ -82,17 +98,49 @@
       object-fit: cover;
       border-radius: 10px;
       transition: transform 0.3s;
-      max-width: 100%; /* Ensure the images are responsive */
+      max-width: 100%;
     }
     .gallery img:hover {
       transform: scale(1.05);
     }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 10px;
+
+    
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    body.dark-mode header {
+      background-color: #1a1a1a;
+    }
+    body.dark-mode nav ul {
+      background-color: #333;
+    }
+    body.dark-mode nav ul li a {
+      color: #ccc;
+    }
+    body.dark-mode .tab {
+      background-color: #333;
+      color: #ccc;
+    }
+    body.dark-mode .tab.active {
+      background-color: #1a1a1a;
+    }
+    body.dark-mode footer {
+      background-color: #333;
+    }
+
+    .dark-mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
       background-color: #0072ff;
       color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
     }
   </style>
   <audio autoplay loop hidden>
@@ -107,16 +155,19 @@
         <li><a href="breed.html">Breeds</a></li>
         <li><a href="caree.html">Care Tips</a></li>
         <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="video.html" >Videos</a></li>
         <li><a href="deli.html">Delivery</a></li>
         <li><a href="cont.html">Contact</a></li>
-        <li><a href="about.html" >About</a></li>
-        <li><a href="services.html" >Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="horse stable.html">Horse stable</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
     <h2>Our Horses Gallery</h2>
     <p>Browse through our beautiful collection of horses.</p>
 
@@ -126,36 +177,61 @@
     </div>
 
     <div id="available" class="gallery active">
-      <img src="h1.jpg" alt="Available horse 1 - Beautiful bay horse">
-      <img src="h2.jpg" alt="Available horse 2 - Majestic Arabian horse">
-      <img src="h3.jpg" alt="Available horse 3 - Strong draft horse">
-      <img src="h4.jpg" alt="Available horse 4 - Elegant thoroughbred">
-      <img src="h5.jpg" alt="Available horse 5 - Playful pony">
-      <img src="h7.jpg" alt="Available horse 6 - Gentle mare">
-      <img src="h8.jpg" alt="Available horse 7 - Friendly gelding">
-      <img src="h9.jpg" alt="Available horse 8 - Graceful stallion">
+      <img src="h1.jpg" alt="Available horse 1 - Beautiful bay horse" data-aos="fade-up" />
+      <img src="h2.jpg" alt="Available horse 2 - Majestic Arabian horse" data-aos="fade-up" />
+      <img src="h3.jpg" alt="Available horse 3 - Strong draft horse" data-aos="fade-up" />
+      <img src="h4.jpg" alt="Available horse 4 - Elegant thoroughbred" data-aos="fade-up" />
+      <img src="h5.jpg" alt="Available horse 5 - Playful pony" data-aos="fade-up" />
+      <img src="h7.jpg" alt="Available horse 6 - Gentle mare" data-aos="fade-up" />
+      <img src="h8.jpg" alt="Available horse 7 - Friendly gelding" data-aos="fade-up" />
+      <img src="h9.jpg" alt="Available horse 8 - Graceful stallion" data-aos="fade-up" />
     </div>
 
     <div id="sold" class="gallery">
-      <img src="h10.jpg" alt="Sold horse 1 - Proud black stallion">
-      <img src="h11.jpg" alt="Sold horse 2 - Adorable pony foal">
-      <img src="h12.jpg" alt="Sold horse 3 - Swift racehorse">
-      <img src="h13.jpg" alt="Sold horse 4 - Hardy draft horse">
-      <img src="h14.jpg" alt="Sold horse 5 - Gorgeous gelding">
-      <img src="h16.jpg" alt="Sold horse 6 - Lovely Arabian mare">
-      <img src="h17.jpg" alt="Sold horse 7 - Strong Clydesdale">
-      <img src="h20.jpg" alt="Sold horse 8 - Beautiful Palomino">
-      <img src="h21.jpg" alt="Sold horse 9 - Majestic Friesian">
-      <img src="h23.jpg" alt="Sold horse 10 - Playful foal">
+      <img src="h10.jpg" alt="Sold horse 1 - Proud black stallion" data-aos="fade-up" />
+      <img src="h11.jpg" alt="Sold horse 2 - Adorable pony foal" data-aos="fade-up" />
+      <img src="h12.jpg" alt="Sold horse 3 - Swift racehorse" data-aos="fade-up" />
+      <img src="h13.jpg" alt="Sold horse 4 - Hardy draft horse" data-aos="fade-up" />
+      <img src="h14.jpg" alt="Sold horse 5 - Gorgeous gelding" data-aos="fade-up" />
+      <img src="h16.jpg" alt="Sold horse 6 - Lovely Arabian mare" data-aos="fade-up" />
+      <img src="h17.jpg" alt="Sold horse 7 - Strong Clydesdale" data-aos="fade-up" />
+      <img src="h20.jpg" alt="Sold horse 8 - Beautiful Palomino" data-aos="fade-up" />
+      <img src="h21.jpg" alt="Sold horse 9 - Majestic Friesian" data-aos="fade-up" />
+      <img src="h23.jpg" alt="Sold horse 10 - Playful foal" data-aos="fade-up" />
     </div>
-    
   </main>
 
   <footer>
+    <footer >
+      <div>
+        <h3>Contact Us</h3>
+        <p>Email:  geywoodacresstableinfo@gmail.com | Phone: (555) 123-4567</p>
+      </div>
+      <div>
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
     <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
+    // Initialize AOS animation
+    AOS.init();
+
+    // Toggle Dark Mode
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Gallery tab switching logic
     function showGallery(category) {
       const tabs = document.querySelectorAll('.tab');
       const galleries = document.querySelectorAll('.gallery');
