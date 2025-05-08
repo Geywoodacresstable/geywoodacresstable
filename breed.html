@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="st.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-  <script defer src="darkmode.js"></script>
+  <script defer src="fm.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
 
@@ -23,6 +25,7 @@
         <li><a href="breed.html" class="active">Breeds</a></li>
         <li><a href="caree.html">Care Tips</a></li>
         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Videos</a></li>
         <li><a href="deli.html">Delivery</a></li>
         <li><a href="cont.html">Contact</a></li>
         <li><a href="about.html">About</a></li>
@@ -73,23 +76,32 @@
       </div>
     </section>
   </main>
+  <script></script>
 
   <!-- Footer -->
   <footer>
     <div>
       <h3>Contact Us</h3>
-      <p>Email: info@geywoodacres.com | Phone: (555) 123-4567</p>
+      <p>Email: geywoodacresstableinfo@gmail.com | Phone: (555) 123-4567</p>
     </div>
     <div>
-      <h3>Follow Us</h3>
-      <div class="flex">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </div>
     <p>&copy; 2025 GEYWOOD ACRES STABLE. All rights reserved.</p>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
 
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    </script>
 </body>
 </html>

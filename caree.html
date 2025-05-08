@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GEYWOOD ACRES STABLE | Care Tips</title>
   <link rel="stylesheet" href="st.css"/>
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer src="darkmode.js"></script>
 </head>
 
 <body>
+
+  <!-- Dark Mode Toggle -->
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+  <!-- Header -->
   <header>
     <h1>GEYWOOD ACRES STABLE</h1>
     <nav>
@@ -17,18 +24,25 @@
         <li><a href="breed.html">Breeds</a></li>
         <li><a href="caree.html" class="active">Care Tips</a></li>
         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Videos</a></li>
         <li><a href="deli.html">Delivery</a></li>
         <li><a href="cont.html">Contact</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="horse stable.html">Horse stable</a></li>
+        <li><a href="horse stable.html">Horse Stable</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Horse Care Tips</h2>
+    <p>Keep your horse healthy, happy, and strong with our expert guidance.</p>
+  </section>
+
+  <!-- Care Tips Section -->
   <main>
-    <section>
-      <h2>How to Take Care of Your Horse</h2>
+    <section class="care-section" data-aos="fade-up">
       <ul class="care-tips">
         <li><strong>1. Nutrition:</strong> Provide a balanced diet with hay, grains, and fresh water. Consult a vet for specific dietary needs.</li>
         <li><strong>2. Exercise:</strong> Horses need regular exercise, including riding, walking, or turnout in a pasture.</li>
@@ -37,12 +51,27 @@
         <li><strong>5. Shelter:</strong> Provide a safe and comfortable shelter from the elements, with enough space to move around.</li>
         <li><strong>6. Socialization:</strong> Horses are social animals. Let them interact with other horses or animals to maintain mental well-being.</li>
       </ul>
-      <img src="images/horse-care.jpg" alt="Horse care tips" class="responsive-img"/>
+      <img src="images/horse-care.jpg" alt="Horse care tips" class="responsive-img" loading="lazy"/>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
+    <div>
+      <h3>Contact Us</h3>
+      <p>Email:  geywoodacresstableinfo@gmail.com | Phone: (555) 123-4567</p>
+    </div>
+    <div>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href=""><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <p>&copy; 2025 GEYWOOD ACRES STABLE. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
